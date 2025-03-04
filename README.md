@@ -23,4 +23,4 @@ Application is hosted on `Render`: [Inventory Application]("/")
 
 ## API Endpoints
 
-- WIP
+<img src="./images/inventory-endpoints.png" alt="Inventory API Endpoitns" width="400">
