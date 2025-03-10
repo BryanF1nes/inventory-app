@@ -35,7 +35,7 @@ function createTable(data) {
         tr.classList.add("bg-gray-800", "text-white", "border", "rounded-md", "odd:bg-gray-900", "dark:border-gray-700", "border-gray-200");
         tr.innerHTML = `
         <td class="px-6 py-4">${item.name}</td>
-        <td class="px-6 py-4">${item.price}</td>
+        <td class="px-6 py-4">$${item.price}</td>
         <td class="px-6 py-4">${item.category_name}</td>
         `;
         tbody.append(tr);
