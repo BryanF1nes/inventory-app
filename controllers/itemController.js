@@ -10,6 +10,17 @@ async function getItems(req, res) {
     res.send(items);
 }
 
+async function getTable(req, res) {
+    const items = await db.getTable();
+
+    if (!items) {
+        return res.status(404).send('No table');
+    };
+
+    res.send(items);
+}
+
 module.exports = {
     getItems,
+    getTable,
 }
