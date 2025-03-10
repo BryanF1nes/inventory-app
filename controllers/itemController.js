@@ -17,7 +17,7 @@ async function getTable(req, res) {
         return res.status(404).send('No table');
     };
 
-    res.send(items);
+    res.json({ items: items});
 }
 
 module.exports = {
