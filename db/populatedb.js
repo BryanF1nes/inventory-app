@@ -24,7 +24,10 @@ INSERT INTO item (name, price, category_id) VALUES
 async function main() {
     console.log("seeding....");
     const client = new Client({
-        connectionString: "postgresql://bryan:root@localhost:5432/inventory_app",
+        connectionString: process.env.CONNECTION_STRING,
+        ssl: {
+            rejectUnauthorized: false,
+        }
     });
     await client.connect();
     await client.query(SQL);
