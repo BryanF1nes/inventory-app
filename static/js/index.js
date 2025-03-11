@@ -22,7 +22,7 @@ function createTable(data) {
         const th = document.createElement("th");
         th.textContent = header;
         th.setAttribute("scope", "col");
-        th.classList.add("text-left", "px-6", "py-3");
+        th.classList.add("text-left", "px-6", "py-4");
         tr.append(th);
         thead.append(tr);
     });
