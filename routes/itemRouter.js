@@ -4,5 +4,8 @@ const itemRouter = Router();
 
 itemRouter.get("/", itemController.getItems);
 itemRouter.get("/table", itemController.getTable);
+itemRouter.get("/:id", itemController.getItem);
+
+itemRouter.post("/update-item/:id", itemController.updateItem);
 
 module.exports = itemRouter;

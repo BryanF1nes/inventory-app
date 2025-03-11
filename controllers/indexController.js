@@ -20,5 +20,5 @@ async function postItem(req, res) {
 module.exports = {
     homePage,
     getAddItemForm,
-    postItem
+    postItem,
 }

@@ -13,17 +13,23 @@ async function getData() {
 function createTable(data) {
     const table = document.querySelector("table");
     const thead = document.querySelector("thead");
-    const headers = ["Name", "Price", "Category"];
+    const headers = ["Name", "Price", "Category", ""];
     const tr = document.createElement("tr");
     thead.innerHTML = ""; // Clear previous headers if any
     tr.classList.add("text-white", "bg-gray-800", "border", "dark:border-gray-700", "border-gray-200", "rounded-md");
 
-    headers.forEach((header) => {
+    headers.forEach((header, index) => {
         const th = document.createElement("th");
         th.textContent = header;
         th.setAttribute("scope", "col");
-        th.classList.add("text-left", "px-6", "py-4");
-        tr.append(th);
+        
+        if (index === 0) {
+            th.classList.add("text-left", "px-6", "py-4");
+            tr.append(th);
+        } else {
+            th.classList.add("text-right", "px-6", "py-4");
+            tr.append(th);
+        }
         thead.append(tr);
     });
 
@@ -35,8 +41,9 @@ function createTable(data) {
         tr.classList.add("bg-gray-800", "text-white", "border", "rounded-md", "odd:bg-gray-900", "dark:border-gray-700", "border-gray-200");
         tr.innerHTML = `
         <td class="px-6 py-4">${item.name}</td>
-        <td class="px-6 py-4">$${item.price}</td>
-        <td class="px-6 py-4">${item.category_name}</td>
+        <td class="px-6 py-4 text-right">$${item.price}</td>
+        <td class="px-6 py-4 text-right">${item.category_name}</td>
+        <td class="px-6 py-4 text-right"><a href="/item/${item.id}" class="hover:text-violet-400">Edit</a></td>
         `;
         tbody.append(tr);
     });
