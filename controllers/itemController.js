@@ -40,9 +40,17 @@ async function updateItem(req, res) {
     res.redirect("/");
 }
 
+async function deleteItem(req, res) {
+    const { id } = req.params;
+
+    await db.deleteItem(id);
+    res.redirect("/");
+}
+
 module.exports = {
     getItems,
     getTable,
     getItem,
-    updateItem
+    updateItem,
+    deleteItem
 }

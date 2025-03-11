@@ -10,16 +10,13 @@
     <div class="flex flex-col items-center justify-center">
         <div class="flex items-center justify-between w-full md:w-3/4 max-sm:flex-col my-4">
             <h1 class="text-white text-2xl p-2 m-2 font-semibold">Inventory App</h1>
-            <form>
-                <input type="text" name="search" class="bg-white px-4 py-1 rounded-md mr-2">
-                <button type="submit" class="bg-violet-500 hover:bg-violet-600 text-white px-4 py-1 rounded-md">Search</button>
-            </form>
+            <a href="/add-item" class="max-sm:w-1/2 bg-violet-500 hover:bg-violet-600 text-white p-2 rounded-md text-center">Add Item</a>
         </div>
-        <table class="w-3/4 text-sm text-gray-500 dark:text-gray-400 rounded-md cursor-default">
-            <thead class="text-md text-gray-700 uppercase bg-gray-50 rounded-md dark:text-gray-400 border-b dark:border-gray-700 border-gray-200"></thead>
-        </table>
-        <div class="flex items-center justify-end w-3/4 max-sm:w-full mt-4 max-sm:px-4 max-sm:justify-center">
-            <a href="/add-item" class="max-sm:w-full bg-violet-500 hover:bg-violet-600 text-white p-2 rounded-md text-center">Add Item</a>
+
+        <div class="w-3/4 overflow-x-auto">
+            <table class="w-full text-sm text-gray-500 dark:text-gray-400 rounded-md cursor-default">
+                <thead class="text-md text-gray-700 uppercase bg-gray-50 rounded-md dark:text-gray-400 border-b dark:border-gray-700 border-gray-200"></thead>
+            </table>
         </div>
     </div>
 

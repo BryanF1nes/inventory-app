@@ -61,11 +61,20 @@ async function updateItem(id, name, price, category) {
     }
 }
 
+async function deleteItem(id) {
+    try {
+        await pool.query("DELETE FROM item WHERE id = $1", [id]);
+    } catch (err) {
+        console.error("Unable to find that item to delete.", err);
+    }
+}
+
 module.exports = {
     getAllCategories,
     getAllItems,
     getTable,
     addItem,
     getItem,
-    updateItem
+    updateItem,
+    deleteItem
 }
