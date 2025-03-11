@@ -10,7 +10,15 @@ async function getAddItemForm(req, res) {
     res.render("addItem", { title: "Add Item", categories: categories });
 }
 
+async function postItem(req, res) {
+    const { name, price, category } = req.body;
+    await db.addItem(name, price, category);
+
+    res.redirect("/")
+}
+
 module.exports = {
     homePage,
-    getAddItemForm
+    getAddItemForm,
+    postItem
 }

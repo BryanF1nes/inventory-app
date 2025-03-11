@@ -8,9 +8,15 @@
 </head>
 <body class="bg-gray-800 h-screen w-screen">
     <div class="flex flex-col items-center justify-center">
-        <h1 class="text-white text-2xl p-2 m-2 font-semibold">Inventory App</h1>
+        <div class="flex items-center justify-between w-3/4 my-4">
+            <h1 class="text-white text-2xl p-2 m-2 font-semibold">Inventory App</h1>
+            <form>
+                <input type="text" name="search" class="bg-white px-4 py-2 rounded-md mr-2">
+                <button type="submit" class="bg-violet-500 hover:bg-violet-600 text-white p-2 rounded-md px-6">Search</button>
+            </form>
+        </div>
         <table class="w-3/4 text-sm text-gray-500 dark:text-gray-400 rounded-md cursor-default">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 rounded-md dark:text-gray-400 border-b dark:border-gray-700 border-gray-200"></thead>
+            <thead class="text-md text-gray-700 uppercase bg-gray-50 rounded-md dark:text-gray-400 border-b dark:border-gray-700 border-gray-200"></thead>
         </table>
         <div class="w-3/4 text-right pt-4 mt-2">
             <a href="/add-item" class="bg-violet-500 hover:bg-violet-600 text-white p-2 rounded-md mt-2 py-2 px-4">Add Item</a>

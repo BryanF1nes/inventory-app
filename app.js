@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
+const { body, validationResult } = require("express-validator");
 const path = require("path");
+
 const itemRouter = require("./routes/itemRouter.js");
 const categoryRouter = require("./routes/categoryRouter.js");
 const indexRouter = require("./routes/indexRouter.js");
@@ -11,6 +13,7 @@ const assetPath = path.join(__dirname, "static");
 
 
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(assetPath));
 // Views
 app.use("/", indexRouter);

@@ -27,8 +27,23 @@ async function getTable() {
     }
 }
 
+async function addItem(name, price, category) {
+    try {
+        const categoryResult = await pool.query("SELECT id FROM category WHERE name = $1", [category]);
+        const category_id = categoryResult.rows[0].id;
+
+        await pool.query(
+            "INSERT INTO item (name, price, category_id) VALUES ($1, $2, $3)",
+            [name, price, category_id]
+        );
+    } catch (err) {
+        console.error('Unable to insert item into the table.', err);
+    }
+}
+
 module.exports = {
     getAllCategories,
     getAllItems,
     getTable,
+    addItem
 }
