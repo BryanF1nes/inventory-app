@@ -1,6 +1,6 @@
 async function getData() {
     try {
-        const response = await fetch("http://localhost:3000/item/table");
+        const response = await fetch("https://marine-lezlie-bryandev-823d4747.koyeb.app/item/table");
         const data = await response.json();
         
         createTable(data);
