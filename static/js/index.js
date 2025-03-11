@@ -1,8 +1,15 @@
 async function getData() {
+    let NODE_ENV = "Prod"
+
     try {
-        const response = await fetch("https://marine-lezlie-bryandev-823d4747.koyeb.app/item/table");
+        if (NODE_ENV === "Prod") {
+            const response = await fetch("https://marine-lezlie-bryandev-823d4747.koyeb.app/item/table");
+            const data = await response.json();
+            return createTable(data);
+        }
+
+        const response = await fetch("http://localhost:3000/item/table");
         const data = await response.json();
-        
         createTable(data);
         
     } catch (error) {
